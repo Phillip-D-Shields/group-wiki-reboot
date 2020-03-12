@@ -6,3 +6,38 @@ body {
     height: 100vh;
     width: 100vw;
 }
+
+main {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-areas: 
+        "1 1 1 1"
+        "2 3 3 3"
+        "2 4 4 4"
+        "2 5 5 5"
+        "2 5 5 5";     
+}
+nav {
+    grid-area: 1;
+}
+
+.side-nav {
+    grid-area: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
+header {
+    grid-area: 3;
+}
+
+.hero {
+    grid-area: 4;
+}
+
+.news {
+    grid-area: 5;
+}
