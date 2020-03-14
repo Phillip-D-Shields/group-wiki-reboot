@@ -1,43 +1,189 @@
+:root {
+/* 
+Dark Grey #151513
+Grey #3a3830
+Gold #f9e27e
+Light Gold #fae99a
+Cream #faf1c8
+White #fafaf0 
+*/
+--main-bg: #151513;
+--second-bg: #3a3830;
+--main-fg: #fafaf0;
+--second-fg: #faf1c8;
+--main-hl: #f9e27e;
+--second-hl: #666252;
+}
+
+.main-bg {
+    background-color: var(--main-bg);
+}
+.main-fg {
+    color: var(--main-fg);
+}
+.main-hl {
+    color: var(--main-hl);
+}
+.second-bg {
+    background-color: var(--second-bg);
+}
+.second-fg {
+    color: var(--second-fg);
+}
+.second-hl {
+    color: var(--second-hl);
+}
+
 * {
     box-sizing: border-box;
 }
 
-body {
-    height: 100vh;
-    width: 100vw;
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    color: var(--second-bg);
+}
+
+html {
+    font-family: 'Noto Serif', serif;
 }
 
 main {
-    height: 100%;
-    width: 100%;
+    padding: 1rem;
+    height: 100vh;
+    width: 100vw;
     display: grid;
-    grid-template-areas: 
-        "1 1 1 1"
-        "2 3 3 3"
-        "2 4 4 4"
-        "2 5 5 5"
-        "2 5 5 5";     
-}
-nav {
-    grid-area: 1;
+    grid-template-areas: "logo top top ."
+                         ". hero hero ."
+                         ". info info ."
+                         ". bottom bottom .";
+	grid-template-columns: 125px 1fr 1fr 75px;
+	grid-template-rows: 50px 1fr 1fr 50px;
 }
 
-.side-nav {
-    grid-area: 2;
+.logo {
+    grid-area: logo;
+    width: 100%;
+    height: auto;
+}
+nav {
+    grid-area: top;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    font-size: 1.25rem;
+    flex: 1;
+    width: 85%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 2px solid var(--main-hl);
+}
+.navbar a {
+    padding: .5rem;
+}
+.head {
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+}
+.head a {
+    padding: .5rem;
+}
+.bottom-nav {
+    width: 95%;
+    margin: 0 auto;
+    grid-area: bottom;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.hero {
+    grid-area: hero;
+    display: flex;
+    padding: .5rem;
+    justify-content: space-around;
+    margin-top: 1.5rem;
+    text-align: center;
+   
+}
+
+.searchBar {
+    flex: 2;
+    padding: .5rem;
+    display: flex;
+    
+    align-items: center;
+}
+
+.searchBar form {
+    width: 100%;
+}
+
+.searchBar input:first-of-type {
+    width: 100%;
+}
+
+.searchBar input {
+    width: 45%;
+    margin: 0 auto;
+}
+.picOfDay {
+    flex: 1;
+    display: flex;
+    padding: 1rem;
+}
+
+.picOfDay figure {
+    width: 100%;
+}
+
+.picOfDay figure img {
+    width: 100%;
+}
+.news {
+    grid-area: info;
+    display: flex;
+    margin-top: 2rem;
+}
+
+.headlines {
+    flex: 1;
+
+}
+.headlines ul {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.headlines h2 {
+    font-size: 2rem;
+}
+.history {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.history h2 {
+    font-size: 1.75rem;
+    
+}
+
+.history ul {
+    height: 75%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 
-}
-
-header {
-    grid-area: 3;
-}
-
-.hero {
-    grid-area: 4;
-}
-
-.news {
-    grid-area: 5;
 }
